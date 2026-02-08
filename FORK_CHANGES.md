@@ -7,10 +7,10 @@ This document tracks all custom modifications, patches, and deviations from the 
 - **Fork Repository**: `https://github.com/pieces-app/metadata_fetch`
 - **Upstream Repository**: `https://github.com/jg-l/metadata_fetch`
 - **Current Branch**: `master`
-- **Fork Version**: `0.4.1`
-- **Commits Ahead**: 7
-- **Commits Behind**: 3
-- **Last Upstream Merge**: Fork created from upstream
+- **Fork Version**: `0.4.2`
+- **Commits Ahead**: 7 (custom modifications)
+- **Commits Behind**: 0 (fully synced)
+- **Last Upstream Merge**: February 2026 -- merged `upstream/master` into `chore/unify-dependencies` (commit `fe209b2`)
 
 ## Custom Modifications
 
@@ -31,17 +31,20 @@ This document tracks all custom modifications, patches, and deviations from the 
 - **Commit**: `8b1d270`
 - **Changes**: Added `.iml` IDE project file
 
+## Upstream Sync History
+
+### February 2026 - Upstream Merge & Dependency Unification
+- **Merge Commit**: `fe209b2` -- merged `upstream/master` into `chore/unify-dependencies`
+- **Changes Merged**: 3 upstream commits (CHANGELOG and pubspec updates)
+- **Conflicts Resolved**: `pubspec.yaml` (kept workspace resolution and SDK constraints)
+- **Custom Changes Preserved**: `string_validator` removal intact, workspace `resolution: workspace` preserved
+- **Version**: Bumped to `0.4.2`
+- **Status**: Fully synced with upstream
+
 ## Upstream Sync Status
 
-- **Current Gap**: 3 commits behind upstream/master
-- **Complexity**: LOW -- our changes are minimal
-- **Priority**: LOW -- small gap, stable package
-
-### Recommended Sync Approach
-1. Fetch upstream master
-2. Merge -- should be straightforward with 3 commits behind
-3. Verify string_validator removal is still intact
-4. Test metadata fetching functionality
+- **Current Gap**: 0 commits behind upstream/master (fully synced, February 2026)
+- **Status**: Up to date. Monitor upstream for new commits (upstream is stale -- last push Sep 2024).
 
 ## Why This Fork Exists
 
@@ -50,8 +53,9 @@ This document tracks all custom modifications, patches, and deviations from the 
 
 ## Future Considerations
 
-1. **Consider Dropping Fork**: Only 3 commits behind with minimal changes; may be possible to use upstream directly
+1. **Consider Dropping Fork**: Now fully synced. Could potentially use upstream if they accept the `string_validator` removal PR and bump SDK constraints. However, upstream is stale (last push Sep 2024, 0 recent activity).
 2. **Upstream Contribution**: The string_validator removal is a clean improvement that could be contributed
+3. **SDK Compatibility**: Upstream pub.dev SDK constraint is likely still old (`<3.0.0`). Fork is needed until upstream updates.
 
 ## Contact
 
